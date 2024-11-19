@@ -10,7 +10,6 @@ public class MarsRover {
     private String coordinate;
 
     public  MarsRover(){
-//        this.direction=direction.N;
         this.orientation=new NorthOriented();
         this.x_coordinate=0;
         this.y_coordinate=0;
@@ -33,6 +32,10 @@ public class MarsRover {
         }else if(command.equals("M")){
             if(orientation.getDirection()==Direction.N){
                 y_coordinate+=1;
+                this.coordinate=String.format("%d:%d:",x_coordinate,y_coordinate);
+            }
+            if(orientation.getDirection()==Direction.E){
+                x_coordinate+=1;
                 this.coordinate=String.format("%d:%d:",x_coordinate,y_coordinate);
             }
 
