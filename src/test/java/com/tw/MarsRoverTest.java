@@ -98,5 +98,14 @@ class MarsRoverTest {
         assertEquals("-1:0:W",report);
     }
 
+    @Test
+    public void should_retun_0_minus1_S_when_orient_South_and_turn_forward(){
+        MarsRover rover=new MarsRover();
+        rover.executeCommand("R");
+        rover.executeCommand("R");
+        String report=rover.executeCommand("M");
+        assertEquals("0:-1:S",report);
+    }
+
 }
 

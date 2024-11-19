@@ -42,7 +42,10 @@ public class MarsRover {
                 x_coordinate-=1;
                 this.coordinate=String.format("%d:%d:",x_coordinate,y_coordinate);
             }
-
+            if(orientation.getDirection()==Direction.S){
+                y_coordinate-=1;
+                this.coordinate=String.format("%d:%d:",x_coordinate,y_coordinate);
+            }
 
             return coordinate+orientation.getDirection();
         }
