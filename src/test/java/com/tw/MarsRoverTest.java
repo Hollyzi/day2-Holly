@@ -75,10 +75,10 @@ class MarsRoverTest {
 
     }
     @Test
-    public void should_retun_1_0_N_when_orient_south_and_turn_forward(){
+    public void should_retun_0_1_N_when_orient_south_and_turn_forward(){
         MarsRover rover=new MarsRover();
         String report=rover.executeCommand("M");
-        assertEquals("1:0:N",report);
+        assertEquals("0:1:N",report);
     }
 
 }
