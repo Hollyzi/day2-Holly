@@ -18,7 +18,6 @@ public class MarsRover {
         this.direction=orientation.getDirection();
     }
     public String showStatus() {
-//        String status="0:0:"+direction;
         return coordinate+direction;
     }
 
@@ -26,11 +25,18 @@ public class MarsRover {
 
         if(command.equals("L")){
             this.orientation=orientation.turnLeft();
-            return "0:0:"+orientation.getDirection();
+            return coordinate+orientation.getDirection();
 
         }else if(command.equals("R")){
             this.orientation=orientation.turnRight();
-            return "0:0:"+orientation.getDirection();
+            return coordinate+orientation.getDirection();
+        }else if(command.equals("M")){
+            if(orientation.getDirection()==Direction.N){
+                y_coordinate+=1;
+                this.coordinate=String.format("%d:%d:",x_coordinate,y_coordinate);
+            }
+
+            return coordinate+orientation.getDirection();
         }
 
 
