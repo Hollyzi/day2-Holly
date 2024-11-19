@@ -45,6 +45,20 @@ class MultiplicationTableBuilderTest {
         assertFalse(isInRange);
     }
 
+    @Test
+    void should_return_true_when_isStarterNotBiggerthanEnd_given_start_2_end_3(){
+        //Given
+        MultiplicationTableBuilder multiplicationTableBuilder=new MultiplicationTableBuilder();
+        int start=2;
+        int end=3;
+
+        //When
+        boolean isStarterNotBiggerthanEnd=multiplicationTableBuilder.isStarterNoBiggerthanEnd(start,end);
+
+        //Then
+        assertTrue(isStarterNotBiggerthanEnd);
+    }
+
 
 
 
