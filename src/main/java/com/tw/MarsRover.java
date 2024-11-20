@@ -10,40 +10,41 @@ public class MarsRover {
     private Orientation orientation;
     private Coordinate coordinate;
 
-    public  MarsRover(){
-        this.orientation=new NorthOriented();
-        this.coordinate=new Coordinate();
+    public MarsRover() {
+        this.orientation = new NorthOriented();
+        this.coordinate = new Coordinate();
         coordinate.setY_coordinate(0);
         coordinate.setX_coordinate(0);
-        this.direction=orientation.getDirection();
+        this.direction = orientation.getDirection();
     }
+
     public String showStatus() {
-        return String.format("%d:%d:",coordinate.getX_coordinate(),coordinate.getY_coordinate())+orientation.getDirection();
+        return String.format("%d:%d:", coordinate.getX_coordinate(), coordinate.getY_coordinate()) + orientation.getDirection();
     }
 
     public void executeCommand(String command) {
 
-        if(command.equals(LEFT)){
-            this.orientation=orientation.turnLeft();
-        }else if(command.equals(RIGHT)){
-            this.orientation=orientation.turnRight();
-        }else if(command.equals(MOVEFORWARD)){
+        if (command.equals(LEFT)) {
+            this.orientation = orientation.turnLeft();
+        } else if (command.equals(RIGHT)) {
+            this.orientation = orientation.turnRight();
+        } else if (command.equals(MOVEFORWARD)) {
             moveForward();
         }
 
     }
 
     private void moveForward() {
-        if(orientation.getDirection()==Direction.N){
+        if (orientation.getDirection() == Direction.N) {
             coordinate.addY_coordinate();
         }
-        if(orientation.getDirection()==Direction.E){
+        if (orientation.getDirection() == Direction.E) {
             coordinate.addX_coordinate();
         }
-        if(orientation.getDirection()==Direction.W){
+        if (orientation.getDirection() == Direction.W) {
             coordinate.reduceX_coordinate();
         }
-        if(orientation.getDirection()==Direction.S){
+        if (orientation.getDirection() == Direction.S) {
             coordinate.reduceY_coordinate();
         }
     }

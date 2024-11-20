@@ -1,7 +1,8 @@
 package com.tw;
 
-public class SouthOriented implements Orientation{
+public class SouthOriented implements Orientation {
     private Direction direction;
+
     @Override
     public Direction getDirection() {
         return direction.S;

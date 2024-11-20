@@ -1,7 +1,8 @@
 package com.tw;
 
-public class NorthOriented implements Orientation{
+public class NorthOriented implements Orientation {
     private Direction direction;
+
     @Override
     public Direction getDirection() {
         return direction.N;
