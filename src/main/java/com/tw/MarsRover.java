@@ -2,11 +2,12 @@ package com.tw;
 
 public class MarsRover {
 
+    public static final String LEFT = "L";
+    public static final String RIGHT = "R";
+    public static final String MOVEFORWARD = "M";
     Direction direction;
 
     private Orientation orientation;
-    private Integer x_coordinate;
-    private Integer y_coordinate;
     private Coordinate coordinate;
 
     public  MarsRover(){
@@ -20,13 +21,13 @@ public class MarsRover {
         return String.format("%d:%d:",coordinate.getX_coordinate(),coordinate.getY_coordinate())+orientation.getDirection();
     }
 
-    public String executeCommand(String command) {
+    public void executeCommand(String command) {
 
-        if(command.equals("L")){
+        if(command.equals(LEFT)){
             this.orientation=orientation.turnLeft();
-        }else if(command.equals("R")){
+        }else if(command.equals(RIGHT)){
             this.orientation=orientation.turnRight();
-        }else if(command.equals("M")){
+        }else if(command.equals(MOVEFORWARD)){
             if(orientation.getDirection()==Direction.N){
                 coordinate.addY_coordinate();
             }
@@ -40,10 +41,7 @@ public class MarsRover {
                 coordinate.reduceY_coordinate();
             }
 
-            return String.format("%d:%d:",coordinate.getX_coordinate(),coordinate.getY_coordinate())+orientation.getDirection()+orientation.getDirection();
         }
 
-
-        return "";
     }
 }
