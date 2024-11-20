@@ -19,4 +19,21 @@ public class Coordinate {
     public void setY_coordinate(Integer y_coordinate) {
         this.y_coordinate = y_coordinate;
     }
+
+    public void addX_coordinate() {
+        this.x_coordinate++;
+    }
+
+    public void addY_coordinate() {
+        this.y_coordinate++;
+    }
+
+    public void reduceX_coordinate() {
+        this.x_coordinate--;
+    }
+
+    public void reduceY_coordinate() {
+        this.y_coordinate--;
+    }
+
 }

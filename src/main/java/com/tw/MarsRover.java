@@ -28,16 +28,16 @@ public class MarsRover {
             this.orientation=orientation.turnRight();
         }else if(command.equals("M")){
             if(orientation.getDirection()==Direction.N){
-                y_coordinate+=1;
+                coordinate.addY_coordinate();
             }
             if(orientation.getDirection()==Direction.E){
-                x_coordinate+=1;
+                coordinate.addX_coordinate();
             }
             if(orientation.getDirection()==Direction.W){
-                x_coordinate-=1;
+                coordinate.reduceX_coordinate();
             }
             if(orientation.getDirection()==Direction.S){
-                y_coordinate-=1;
+                coordinate.reduceY_coordinate();
             }
 
             return String.format("%d:%d:",coordinate.getX_coordinate(),coordinate.getY_coordinate())+orientation.getDirection()+orientation.getDirection();
