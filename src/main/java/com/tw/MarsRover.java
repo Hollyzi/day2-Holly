@@ -17,18 +17,15 @@ public class MarsRover {
         this.direction=orientation.getDirection();
     }
     public String showStatus() {
-        return coordinate+direction;
+        return coordinate+orientation.getDirection();
     }
 
     public String executeCommand(String command) {
 
         if(command.equals("L")){
             this.orientation=orientation.turnLeft();
-            return coordinate+orientation.getDirection();
-
         }else if(command.equals("R")){
             this.orientation=orientation.turnRight();
-            return coordinate+orientation.getDirection();
         }else if(command.equals("M")){
             if(orientation.getDirection()==Direction.N){
                 y_coordinate+=1;

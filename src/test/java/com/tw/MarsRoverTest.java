@@ -20,7 +20,8 @@ class MarsRoverTest {
     @Test
     public void should_face_west_when_orient_north_and_turn_left(){
         MarsRover rover=new MarsRover();
-        String report=rover.executeCommand("L");
+        rover.executeCommand("L");
+        String report=rover.showStatus();
         assertEquals("0:0:W",report);
     }
 
@@ -28,7 +29,8 @@ class MarsRoverTest {
     public void should_face_south_when_orient_west_and_turn_left(){
         MarsRover rover=new MarsRover();
         rover.executeCommand("L");
-        String report=rover.executeCommand("L");
+        rover.executeCommand("L");
+        String report=rover.showStatus();
         assertEquals("0:0:S",report);
     }
 
@@ -37,7 +39,8 @@ class MarsRoverTest {
         MarsRover rover=new MarsRover();
         rover.executeCommand("L");
         rover.executeCommand("L");
-        String report=rover.executeCommand("L");
+        rover.executeCommand("L");
+        String report=rover.showStatus();
         assertEquals("0:0:E",report);
     }
 
@@ -47,14 +50,16 @@ class MarsRoverTest {
         rover.executeCommand("L");
         rover.executeCommand("L");
         rover.executeCommand("L");
-        String report=rover.executeCommand("L");
+        rover.executeCommand("L");
+        String report=rover.showStatus();
         assertEquals("0:0:N",report);
     }
 
     @Test
     public void should_face_east_when_orient_north_and_turn_right(){
         MarsRover rover=new MarsRover();
-        String report=rover.executeCommand("R");
+        rover.executeCommand("R");
+        String report=rover.showStatus();
         assertEquals("0:0:E",report);
     }
 
@@ -62,7 +67,8 @@ class MarsRoverTest {
     public void should_face_south_when_orient_east_and_turn_right(){
         MarsRover rover=new MarsRover();
         rover.executeCommand("R");
-        String report=rover.executeCommand("R");
+        rover.executeCommand("R");
+        String report=rover.showStatus();
         assertEquals("0:0:S",report);
     }
 
@@ -71,7 +77,8 @@ class MarsRoverTest {
         MarsRover rover=new MarsRover();
         rover.executeCommand("R");
         rover.executeCommand("R");
-        String report=rover.executeCommand("R");
+        rover.executeCommand("R");
+        String report=rover.showStatus();
         assertEquals("0:0:W",report);
     }
 
@@ -81,14 +88,16 @@ class MarsRoverTest {
         rover.executeCommand("R");
         rover.executeCommand("R");
         rover.executeCommand("R");
-        String report=rover.executeCommand("R");
+        rover.executeCommand("R");
+        String report=rover.showStatus();
         assertEquals("0:0:N",report);
 
     }
     @Test
     public void should_retun_0_1_N_when_orient_south_and_turn_forward(){
         MarsRover rover=new MarsRover();
-        String report=rover.executeCommand("M");
+        rover.executeCommand("M");
+        String report=rover.showStatus();
         assertEquals("0:1:N",report);
     }
     @Test
@@ -97,7 +106,8 @@ class MarsRoverTest {
         rover.executeCommand("L");
         rover.executeCommand("L");
         rover.executeCommand("L");
-        String report=rover.executeCommand("M");
+        rover.executeCommand("M");
+        String report=rover.showStatus();
         assertEquals("1:0:E",report);
     }
 
@@ -105,7 +115,8 @@ class MarsRoverTest {
     public void should_retun_minus1_0_W_when_orient_west_and_turn_forward(){
         MarsRover rover=new MarsRover();
         rover.executeCommand("L");
-        String report=rover.executeCommand("M");
+        rover.executeCommand("M");
+        String report=rover.showStatus();
         assertEquals("-1:0:W",report);
     }
 
@@ -114,7 +125,8 @@ class MarsRoverTest {
         MarsRover rover=new MarsRover();
         rover.executeCommand("R");
         rover.executeCommand("R");
-        String report=rover.executeCommand("M");
+        rover.executeCommand("M");
+        String report=rover.showStatus();
         assertEquals("0:-1:S",report);
     }
 
