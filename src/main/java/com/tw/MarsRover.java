@@ -28,20 +28,23 @@ public class MarsRover {
         }else if(command.equals(RIGHT)){
             this.orientation=orientation.turnRight();
         }else if(command.equals(MOVEFORWARD)){
-            if(orientation.getDirection()==Direction.N){
-                coordinate.addY_coordinate();
-            }
-            if(orientation.getDirection()==Direction.E){
-                coordinate.addX_coordinate();
-            }
-            if(orientation.getDirection()==Direction.W){
-                coordinate.reduceX_coordinate();
-            }
-            if(orientation.getDirection()==Direction.S){
-                coordinate.reduceY_coordinate();
-            }
-
+            moveForward();
         }
 
+    }
+
+    private void moveForward() {
+        if(orientation.getDirection()==Direction.N){
+            coordinate.addY_coordinate();
+        }
+        if(orientation.getDirection()==Direction.E){
+            coordinate.addX_coordinate();
+        }
+        if(orientation.getDirection()==Direction.W){
+            coordinate.reduceX_coordinate();
+        }
+        if(orientation.getDirection()==Direction.S){
+            coordinate.reduceY_coordinate();
+        }
     }
 }
